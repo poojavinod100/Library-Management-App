@@ -1,0 +1,58 @@
+﻿@model IEnumerable<LibraryAPI2.Models.BooksForUser>
+
+@{
+    ViewData["Title"] = "ListBooks";
+}
+
+<h1>Books available for checkout</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Book Id
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Genre
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+<p align="center">
+    @Html.ActionLink("Checkout a book", "CheckOut", "Users")
+</p>
+<p align="center">
+    @Html.ActionLink("Return a book", "Return", "Users")
+</p>
+<p align="center">
+    @Html.ActionLink("List books checked out by me", "ListBooksCheckedOut", "Users")
+</p>

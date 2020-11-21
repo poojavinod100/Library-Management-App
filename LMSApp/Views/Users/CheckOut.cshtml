@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "CheckOut";
+}
+
+<h1>Checkout a book</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="@Url.Action("CheckoutBook", "Users")">
+            <div class="form-group">
+                <label>Book Id:</label>
+                <input type="text" name="BookId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Checkout Book" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
