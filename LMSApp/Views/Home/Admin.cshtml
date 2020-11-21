@@ -1,0 +1,38 @@
+﻿@model IEnumerable<LibraryAPI2.Models.Library>
+
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<h1>Select a Library</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Library Id
+            </th>
+            <th>
+                Location Id
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibraryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationId)
+            </td>
+            <td>
+                @Html.ActionLink("Select", "ListBooks", "Admin", new { id = item.LibraryId })
+                @*@<a asp-action="Select" asp-route-id="@item.LibraryId" >Select</a>*@
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

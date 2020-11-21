@@ -1,0 +1,20 @@
+﻿@model LibraryAPI2.Models.UserId
+@{
+    ViewData["Title"] = "EnterUserId";
+}
+
+<h1>Welcome User!</h1>
+
+
+@using (@Html.BeginForm("UserHome", "Users"))
+{
+    <label>Enter your registered User ID:</label>
+    @Html.TextBoxFor(x => x.id);
+    <input type="Submit" value="Proceed" class="ui-button-icon-secondary" />
+}
+
+
+
+
+
+
